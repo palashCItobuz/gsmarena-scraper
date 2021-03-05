@@ -58,7 +58,7 @@ app.get('/checkDate', async (req, res) => {
     let data = {}
     if(!model || req.query.model == '') return res.status(400).json({ error: "Model was not supplied" })
     try {
-       data = await start(req.query.model)
+      data = await start(decodeURI(req.query.model))
     } catch (error) {
         return res.status(400).json(data)
     }
