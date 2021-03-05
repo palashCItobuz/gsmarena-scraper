@@ -53,7 +53,7 @@ async function start (term) {
     return response
   }
 
-app.get('/', async (req, res) => {
+app.get('/checkDate', async (req, res) => {
     const { model } = req.query
     let data = {}
     if(!model || req.query.model == '') return res.status(400).json({ error: "Model was not supplied" })
